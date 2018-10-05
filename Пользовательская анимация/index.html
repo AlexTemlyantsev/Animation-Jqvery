@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Пользовательская анимация</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("p.img img").bind("click", function(event) {
+				$(event.target).parent().css("text-align", "center");
+				//$($(event.target).parents().get(0)).css("text-align", "center");
+				$(event.target).animate(
+					{
+						width: $(event.target).width() * 10,
+						height: $(event.target).height() * 10
+					},
+				3000);
+			});
+			$("p.img1 img").bind("mouseenter", function(event) {
+				$(event.target).parent().css("text-align", "center");
+				$(event.target).parent().fadeTo(3000,1.0);
+				//$($(event.target).parents().get(0)).css("text-align", "center");
+				$(event.target).animate(
+					{
+						width: $(event.target).width() * 2,
+						height: $(event.target).height() * 2,
+					},
+				3000);
+			});
+		});
+	</script>
+	<style>
+		p.img1 {
+			opacity: 0.1;
+		}
+	</style>
+</head>
+<body>
+	<p class="img">
+		<img src="sun.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+	<p class="img">
+		<img src="sun.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+	<p class="img">
+		<img src="sun.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+	<p class="img1">
+		<img src="spider.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+	<p class="img1">
+		<img src="spider.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+	<p class="img1">
+		<img src="spider.jpg" style="width: 100px;" alt="Солнце" />
+	</p>
+</body>
+</html>
